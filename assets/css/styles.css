@@ -355,24 +355,44 @@ img {
   flex: 1 0 50%;
 } 
 
+
 /* ===== WORK =====*/
 .work__container {
   row-gap: 2rem;
 }
 
-.work__img {
+.work-item {
   box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
   border-radius: .5rem;
   overflow: hidden;
+  background-image: url(assets/img/work1.jpg);
 }
 
-.work__img img {
-  transition: 1s;
+
+.work__card{
+  padding: 1rem;
 }
 
-.work__img img:hover {
-  transform: scale(1.1);
+.work__card .title{
+  font-size: large;
+  font-weight: bold;
 }
+
+.work__card .subtitle{
+  font-size: small;
+  color: #00A86B;
+}
+
+.work__card .card-body{
+  margin-bottom: var(--mb-2);
+}
+
+.work__card .tech{
+  font-size: smaller;
+  font-weight: bold;
+}
+
+
 
 /* ===== CONTACT =====*/
 .contact__input {
@@ -422,6 +442,57 @@ img {
 .footer__copy {
   font-size: var(--smaller-font-size);
 }
+
+/***** marquee skills *****/
+
+.marquee-wrapper{ 
+  margin-top: 2rem;
+  text-align:center;
+}
+.marquee-wrapper .container{
+  overflow:hidden;
+}
+.marquee-inner span{
+  float:left;
+}
+.marquee-wrapper .marquee-block{
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+.marquee-inner{
+  display: block;
+  width: 200%;
+  position: absolute;
+}
+.marquee-inner i{
+  font-size: 50px;
+}
+
+.marquee-inner.to-left{
+  animation: marqueeLeft 25s linear infinite;
+}
+
+.marquee-item{
+  width: 100px;
+  display: inline-block;
+  transition: all .2s ease-out;
+}
+@keyframes marqueeLeft{
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+
+/***** End marquee skills *****/
+
+
 
 /* ===== MEDIA QUERIES=====*/
 @media screen and (max-width: 320px) {
@@ -486,6 +557,7 @@ img {
   .section-title {
     margin-bottom: var(--mb-6);
   }
+
   .section-title::after {
     width: 80px;
     top: 3rem;
